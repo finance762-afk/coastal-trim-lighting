@@ -6,6 +6,7 @@
  * Every entry is gated on disk (pageExists) so unbuilt pages never appear; lastmod = file mtime.
  * Excluded on purpose: /thank-you (noindex), /404, and the /blog/ "coming soon" placeholder.
  * Trailing-slash URLs match each page's canonical exactly.
+ * Priorities: home 1.0, services 0.8, other pages 0.6, legal 0.3 (changefreq yearly).
  */
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
@@ -14,18 +15,18 @@ $smRoot  = $_SERVER['DOCUMENT_ROOT'];
 $smLogo  = ['src' => '/assets/images/logo-v1.png', 'caption' => $siteName . ' logo badge: script lettering over a sunset coastline with palm trees, ringed by colored string lights'];
 $smPages = [
     ['path' => '/',                'file' => 'index.php', 'changefreq' => 'weekly',  'priority' => '1.0', 'images' => [$smLogo]],
-    ['path' => '/services/',       'changefreq' => 'monthly', 'priority' => '0.9'],
+    ['path' => '/services/',       'changefreq' => 'monthly', 'priority' => '0.8'],
 ];
 foreach ($services as $smSvc) {
-    $smPages[] = ['path' => '/services/' . $smSvc['slug'] . '/', 'changefreq' => 'monthly', 'priority' => '0.9'];
+    $smPages[] = ['path' => '/services/' . $smSvc['slug'] . '/', 'changefreq' => 'monthly', 'priority' => '0.8'];
 }
-$smPages[] = ['path' => '/service-areas/', 'changefreq' => 'monthly', 'priority' => '0.8'];
+$smPages[] = ['path' => '/service-areas/', 'changefreq' => 'monthly', 'priority' => '0.6'];
 foreach ($serviceAreas as $smArea) {
-    $smPages[] = ['path' => '/service-areas/' . $smArea['slug'] . '/', 'changefreq' => 'monthly', 'priority' => '0.8'];
+    $smPages[] = ['path' => '/service-areas/' . $smArea['slug'] . '/', 'changefreq' => 'monthly', 'priority' => '0.6'];
 }
 $smPages = array_merge($smPages, [
-    ['path' => '/about/',          'changefreq' => 'monthly', 'priority' => '0.7', 'images' => [$smLogo]],
-    ['path' => '/contact/',        'changefreq' => 'monthly', 'priority' => '0.7'],
+    ['path' => '/about/',          'changefreq' => 'monthly', 'priority' => '0.6', 'images' => [$smLogo]],
+    ['path' => '/contact/',        'changefreq' => 'monthly', 'priority' => '0.6'],
     ['path' => '/faq/',            'changefreq' => 'monthly', 'priority' => '0.6'],
     ['path' => '/privacy-policy/', 'changefreq' => 'yearly',  'priority' => '0.3'],
     ['path' => '/terms/',          'changefreq' => 'yearly',  'priority' => '0.3'],

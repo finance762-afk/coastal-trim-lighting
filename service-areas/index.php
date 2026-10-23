@@ -13,8 +13,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * Google Maps directions link built from the real place_id.
  * Zip checker is Flagship-only → not used on this Premium build.
  * ------------------------------------------------------------------------- */
-$pageTitle       = 'Service Areas: San Marcos & North County | Coastal Trim Lighting';
-$pageDescription = 'Coastal Trim Lighting installs holiday and outdoor lighting in San Marcos, CA and nearby North County San Diego communities. Call (760) 916-3716.';
+$pageTitle       = 'Service Areas Near San Marcos, CA | Coastal Trim Lighting';
+$pageDescription = 'Coastal Trim Lighting installs holiday and outdoor lighting in San Marcos, CA and nearby North County towns within about 25 miles. Call (760) 916-3716.';
 $canonicalUrl    = $siteUrl . '/service-areas/';
 $ogImage         = '/assets/images/og-default-v1.jpg';
 $currentPage     = 'service-areas';

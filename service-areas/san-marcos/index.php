@@ -42,8 +42,8 @@ $pageAreaSlug = 'san-marcos';
 $thisArea = null;
 foreach ($serviceAreas as $cfgArea) { if ($cfgArea['slug'] === $pageAreaSlug) { $thisArea = $cfgArea; break; } }
 
-$pageTitle       = 'Holiday & Outdoor Lighting San Marcos, CA | Coastal Trim Lighting';
-$pageDescription = 'Holiday and outdoor lighting for San Marcos, CA homes and businesses, from San Elijo Hills to Lake San Marcos. Est. 2016. Call (760) 916-3716.';
+$pageTitle       = 'Holiday Lighting San Marcos, CA | Coastal Trim Lighting';
+$pageDescription = 'Holiday and outdoor lighting for San Marcos, CA homes and businesses, from San Elijo Hills to Lake San Marcos. Est. 2016. Call (760) 916-3716 for a price.';
 $canonicalUrl    = $siteUrl . '/service-areas/' . $pageAreaSlug . '/';
 $ogImage         = '/assets/images/og-default-v1.jpg';
 $currentPage     = 'service-areas';

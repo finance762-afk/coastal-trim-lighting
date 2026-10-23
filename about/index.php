@@ -15,7 +15,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * Credentials render only from config ($licenseLabel); none exist yet.
  * ------------------------------------------------------------------------- */
 $pageTitle       = 'About Coastal Trim Lighting | San Marcos, CA Since 2016';
-$pageDescription = 'Coastal Trim Lighting is a San Marcos, CA lighting company owned by Jacob Akbari since 2016: holiday lighting for homes and businesses plus landscape lighting.';
+$pageDescription = 'Coastal Trim Lighting, owned by Jacob Akbari, has lit San Marcos, CA homes and businesses since 2016 with holiday and landscape lighting. Call (760) 916-3716.';
 $canonicalUrl    = $siteUrl . '/about/';
 $ogImage         = '/assets/images/og-default-v1.jpg';
 $currentPage     = 'about';

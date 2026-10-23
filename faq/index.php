@@ -13,7 +13,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * deliberately not answered — see /content-confirmations.json.
  * ------------------------------------------------------------------------- */
 $pageTitle       = 'Lighting FAQ | San Marcos, CA | Coastal Trim Lighting';
-$pageDescription = 'Answers about holiday and landscape lighting in San Marcos, CA from Coastal Trim Lighting: services, service area, pricing, permits and how booking works.';
+$pageDescription = 'Answers on holiday and landscape lighting in San Marcos, CA: services, service area, pricing, permits and booking. Call Coastal Trim Lighting at (760) 916-3716.';
 $canonicalUrl    = $siteUrl . '/faq/';
 $ogImage         = '/assets/images/og-default-v1.jpg';
 $currentPage     = 'faq';

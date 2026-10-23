@@ -16,7 +16,7 @@ $pageSvcSlug = 'residential-holiday-lighting';
 $thisService = null;
 foreach ($services as $cfgSvc) { if ($cfgSvc['slug'] === $pageSvcSlug) { $thisService = $cfgSvc; break; } }
 
-$pageTitle       = 'Residential Holiday Lighting San Marcos CA | Coastal Trim Lighting';
+$pageTitle       = 'Home Holiday Lighting San Marcos, CA | Coastal Trim Lighting';
 $pageDescription = 'Holiday lights put up on San Marcos, CA homes: rooflines, trees and walkways, priced for your house. Coastal Trim Lighting, est. 2016. Call (760) 916-3716.';
 $canonicalUrl    = $siteUrl . '/services/' . $pageSvcSlug . '/';
 $ogImage         = '/assets/images/og-default-v1.jpg';

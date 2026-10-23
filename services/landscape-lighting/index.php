@@ -16,8 +16,8 @@ $pageSvcSlug = 'landscape-lighting';
 $thisService = null;
 foreach ($services as $cfgSvc) { if ($cfgSvc['slug'] === $pageSvcSlug) { $thisService = $cfgSvc; break; } }
 
-$pageTitle       = 'Landscape & Outdoor Lighting San Marcos CA | Coastal Trim Lighting';
-$pageDescription = 'Year-round landscape and outdoor lighting for San Marcos, CA homes and commercial properties: paths, trees, entries, patios. Call (760) 916-3716.';
+$pageTitle       = 'Landscape Lighting San Marcos, CA | Coastal Trim Lighting';
+$pageDescription = 'Year-round landscape and outdoor lighting for San Marcos, CA homes and commercial properties: paths, trees, entries, patios. Call (760) 916-3716 for a price.';
 $canonicalUrl    = $siteUrl . '/services/' . $pageSvcSlug . '/';
 $ogImage         = '/assets/images/og-default-v1.jpg';
 $currentPage     = 'services';

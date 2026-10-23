@@ -13,7 +13,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/legal-vars.php';
 
 $pageTitle       = 'Accessibility Statement | Coastal Trim Lighting | San Marcos';
-$pageDescription = 'The Coastal Trim Lighting accessibility statement: our WCAG 2.1 AA goal, site features, known limitations, and how to report a barrier or get help.';
+$pageDescription = 'The Coastal Trim Lighting accessibility statement: our WCAG 2.1 AA goal, site features, known limitations, and how to report a barrier. Call (760) 916-3716.';
 $canonicalUrl    = $siteUrl . '/accessibility/';
 $ogImage         = '/assets/images/og-default-v1.jpg';
 $currentPage     = 'accessibility';

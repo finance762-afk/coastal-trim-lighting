@@ -11,7 +11,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * build-plan.json / config.php only.
  * ------------------------------------------------------------------------- */
 $pageTitle       = 'Lighting Services in San Marcos, CA | Coastal Trim Lighting';
-$pageDescription = 'Residential and commercial holiday lighting plus year-round landscape and outdoor lighting in San Marcos, CA. Coastal Trim Lighting, est. 2016.';
+$pageDescription = 'Residential and commercial holiday lighting plus year-round landscape and outdoor lighting in San Marcos, CA from Coastal Trim Lighting. Call (760) 916-3716.';
 $canonicalUrl    = $siteUrl . '/services/';
 $ogImage         = '/assets/images/og-default-v1.jpg';
 $currentPage     = 'services';

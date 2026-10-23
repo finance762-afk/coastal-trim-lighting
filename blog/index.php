@@ -11,7 +11,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * "From the Blog" section.
  * ------------------------------------------------------------------------- */
 $pageTitle       = 'Lighting Blog (Coming Soon) | Coastal Trim Lighting';
-$pageDescription = 'Holiday and outdoor lighting articles from Coastal Trim Lighting in San Marcos, CA are coming soon. Call (760) 916-3716 with a lighting question now.';
+$pageDescription = 'Holiday and outdoor lighting articles from Coastal Trim Lighting in San Marcos, CA are coming soon. Have a lighting question now? Call (760) 916-3716 today.';
 $canonicalUrl    = $siteUrl . '/blog/';
 $ogImage         = '/assets/images/og-default-v1.jpg';
 $currentPage     = 'blog';

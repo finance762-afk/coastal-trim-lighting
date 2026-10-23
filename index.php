@@ -15,7 +15,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * time) are left out of the copy and listed in /content-confirmations.json.
  * ------------------------------------------------------------------------- */
 $pageTitle       = 'Holiday Lighting in San Marcos, CA | Coastal Trim Lighting';
-$pageDescription = 'Coastal Trim Lighting installs holiday lighting for San Marcos, CA homes and businesses, plus landscape and outdoor lighting. Call (760) 916-3716.';
+$pageDescription = 'Coastal Trim Lighting installs holiday lighting for San Marcos, CA homes and businesses, plus landscape and outdoor lighting. Call (760) 916-3716 for a price.';
 $canonicalUrl    = $siteUrl . '/';
 $ogImage         = '/assets/images/og-default-v1.jpg';
 $currentPage     = 'home';
@@ -90,7 +90,8 @@ $homeFaqs = [
     ['q' => 'Do you install lighting outside the holiday season?',
      'a' => 'Yes. Alongside holiday lighting, Coastal Trim Lighting installs landscape and outdoor lighting: permanent fixtures for paths, yards, trees and entries that stay up year-round on homes and commercial properties.'],
     ['q' => 'What area does Coastal Trim Lighting serve?',
-     'a' => 'Coastal Trim Lighting is based at ' . $address['street'] . ' in ' . cityStateLine(true) . ' and works on properties in San Marcos and the surrounding North County San Diego area, within about ' . (int) $targetRadiusMiles . ' miles.'],
+     'a' => 'Coastal Trim Lighting is based at ' . $address['street'] . ' in ' . cityStateLine(true) . ' and works on properties in San Marcos and the surrounding North County San Diego area, within about ' . (int) $targetRadiusMiles . ' miles.',
+     'link' => ['href' => areaUrl($serviceAreas[0]), 'label' => 'San Marcos service area details']],
     ['q' => 'How do I get my holiday lights on the schedule?',
      'a' => 'Call ' . $phone . ' or send the estimate form with your address and what you would like lit. Coastal Trim Lighting follows up with open install dates and a price for your property.'],
     ['q' => 'What should I have ready when I call?',
@@ -318,6 +319,9 @@ section.home-hero { padding-bottom: calc(var(--space-16) + var(--space-8)); }
 .home-faq .faq { padding: var(--space-md) 0; }
 .home-faq .faq summary { text-wrap: balance; }
 .home-faq .faq[open] summary { color: var(--color-primary); }
+.home-faq__more { margin-top: var(--space-lg); text-align: center; }
+.home-faq .text-link { color: var(--color-primary); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.home-faq .text-link:hover { color: var(--color-secondary); }
 
 /* -- Estimate section: wide container, form card + next steps -- */
 .home-estimate { background: var(--color-surface); }
@@ -367,12 +371,14 @@ section.home-hero { padding-bottom: calc(var(--space-16) + var(--space-8)); }
         <aside class="hero-form-card" id="estimate-form" aria-labelledby="hero-form-title">
           <h2 id="hero-form-title"><?php echo e($estimateCtaLabel); ?></h2>
           <p class="hero-form-tagline">Tell us the address and what you'd like lit.</p>
-          <form action="<?php echo e($formAction); ?>" method="POST" class="hero-form">
+          <form action="<?php echo e($formAction); ?>" method="POST" class="hero-form" id="hero-form">
             <input type="hidden" name="_next" value="<?php echo e($siteUrl); ?>/thank-you">
             <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
             <input type="hidden" name="form_location" value="hero">
             <input type="hidden" name="consent_version" value="v2.1">
             <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI'] ?? '/'); ?>">
+            <input type="hidden" name="_consent_version" value="v2.1">
+            <input type="hidden" name="_consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI'] ?? '/'); ?>">
             <?php echo p1_attribution_fields('hero'); ?>
             <!-- spam shield: signed render timestamp + JS interaction signal -->
             <?php $heroFt = (string) time(); ?>
@@ -380,6 +386,7 @@ section.home-hero { padding-bottom: calc(var(--space-16) + var(--space-8)); }
             <input type="hidden" name="_js" value="" class="js-shield-field">
             <div class="form-row"><label class="sr-only" for="hero-name">Name</label><input id="hero-name" type="text" name="name" placeholder="Name" autocomplete="name" required></div>
             <div class="form-row"><label class="sr-only" for="hero-phone">Phone</label><input id="hero-phone" type="tel" name="phone" placeholder="Phone" autocomplete="tel" required></div>
+            <div class="form-row"><label class="sr-only" for="hero-email">Email</label><input id="hero-email" type="email" name="email" placeholder="Email" autocomplete="email" required></div>
             <div class="form-row"><label class="sr-only" for="hero-service">Service</label><select id="hero-service" name="service"><?php echo p1_service_options(); ?></select></div>
             <label class="consent" for="hero-terms"><input id="hero-terms" type="checkbox" name="terms_accepted" value="yes" required><span>I agree to the <a href="/terms/" target="_blank" rel="noopener">Terms</a> and <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and consent to be contacted. *</span></label>
             <button type="submit" class="btn btn-primary btn-block">Send my request</button>
@@ -563,10 +570,11 @@ section.home-hero { padding-bottom: calc(var(--space-16) + var(--space-8)); }
         <?php foreach ($homeFaqs as $faqI => $faq): ?>
         <details class="faq reveal-<?php echo $faqI % 2 ? 'right' : 'left'; ?>"<?php echo $faqI < 2 ? ' open' : ''; ?>>
           <summary><?php echo e($faq['q']); ?></summary>
-          <p><?php echo e($faq['a']); ?></p>
+          <p><?php echo e($faq['a']); ?><?php if (!empty($faq['link'])): ?> <a class="text-link" href="<?php echo e($faq['link']['href']); ?>"><?php echo e($faq['link']['label']); ?></a><?php endif; ?></p>
         </details>
         <?php endforeach; ?>
       </div>
+      <p class="home-faq__more"><a class="text-link" href="/faq/">Read all lighting questions on the FAQ page</a></p>
     </div>
   </section>
 

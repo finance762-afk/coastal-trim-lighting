@@ -234,8 +234,6 @@ $ctServiceLinks = [
           <form action="<?php echo e($formAction); ?>" method="POST" class="estimate-form ct-form" id="contact-form">
 <?php echo p1_lead_hidden_fields('contact'); ?>
             <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">
-            <input type="hidden" name="_consent_version" value="v2.1">
-            <input type="hidden" name="_consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI'] ?? '/contact/'); ?>">
 
             <div class="form-grid">
               <div class="field">

@@ -77,12 +77,16 @@ $footAddressLine = (!empty($addressPublic) && !empty($address['street']) ? $addr
       </div>
 
       <!-- AEO entity block: consistent NAP on every page -->
-      <div class="footer-entity" itemscope itemtype="https://schema.org/LocalBusiness">
+      <div class="footer-entity" itemscope itemtype="https://schema.org/LocalBusiness" itemid="<?php echo e($siteUrl); ?>/#organization">
         <meta itemprop="name" content="<?php echo e($siteName); ?>">
         <meta itemprop="url" content="<?php echo e($siteUrl); ?>/">
         <meta itemprop="telephone" content="<?php echo e($phoneRaw); ?>">
         <meta itemprop="email" content="<?php echo e($email); ?>">
-        <p><strong><?php echo e($siteName); ?></strong> is a lighting contractor based in <?php echo e(cityStateLine()); ?>, in business since <?php echo (int) $yearEstablished; ?>. <?php echo e($siteName); ?> installs residential and commercial holiday lighting and landscape and outdoor lighting for properties in <?php echo e($address['city']); ?> and the surrounding area<?php echo !empty($targetRadiusMiles) ? ' within about ' . (int) $targetRadiusMiles . ' miles' : ''; ?>. Reach <?php echo e($siteName); ?> at <a href="tel:<?php echo e($phoneRaw); ?>"><?php echo e($phone); ?></a>, <a href="mailto:<?php echo e($email); ?>"><?php echo e($email); ?></a>, or <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><?php if (!empty($addressPublic) && !empty($address['street'])): ?><span itemprop="streetAddress"><?php echo e($address['street']); ?></span>, <?php endif; ?><span itemprop="addressLocality"><?php echo e($address['city']); ?></span>, <span itemprop="addressRegion"><?php echo e($address['state']); ?></span> <span itemprop="postalCode"><?php echo e($address['zip']); ?></span></span>.</p>
+        <meta itemprop="image" content="<?php echo e($siteUrl); ?>/assets/images/logo-v1.png">
+        <meta itemprop="foundingDate" content="<?php echo (int) $yearEstablished; ?>">
+        <?php if (!empty($gbpMapsUrl)): ?><meta itemprop="hasMap" content="<?php echo e($gbpMapsUrl); ?>"><?php endif; ?>
+        <?php foreach ($serviceAreas as $footArea): ?><meta itemprop="areaServed" content="<?php echo e($footArea['name'] . ', ' . $address['state']); ?>"><?php endforeach; ?>
+        <p itemprop="description"><strong><?php echo e($siteName); ?></strong> is a lighting contractor based in <?php echo e(cityStateLine()); ?>, in business since <?php echo (int) $yearEstablished; ?><?php if (!empty($ownerName)): ?> and owned by <span itemprop="founder" itemscope itemtype="https://schema.org/Person"><span itemprop="name"><?php echo e($ownerName); ?></span></span><?php endif; ?>. <?php echo e($siteName); ?> installs residential and commercial holiday lighting and landscape and outdoor lighting for properties in <?php echo e($address['city']); ?> and the surrounding area<?php echo !empty($targetRadiusMiles) ? ' within about ' . (int) $targetRadiusMiles . ' miles' : ''; ?>. Reach <?php echo e($siteName); ?> at <a href="tel:<?php echo e($phoneRaw); ?>"><?php echo e($phone); ?></a>, <a href="mailto:<?php echo e($email); ?>"><?php echo e($email); ?></a>, or <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><?php if (!empty($addressPublic) && !empty($address['street'])): ?><span itemprop="streetAddress"><?php echo e($address['street']); ?></span>, <?php endif; ?><span itemprop="addressLocality"><?php echo e($address['city']); ?></span>, <span itemprop="addressRegion"><?php echo e($address['state']); ?></span> <span itemprop="postalCode"><?php echo e($address['zip']); ?></span></span>.</p>
       </div>
     </div>
   </div>
@@ -140,6 +144,8 @@ $footAddressLine = (!empty($addressPublic) && !empty($address['street']) ? $addr
       <?php echo p1_attribution_fields('dialog'); ?>
       <input type="hidden" name="consent_version" value="v2.1">
       <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI'] ?? '/'); ?>">
+      <input type="hidden" name="_consent_version" value="v2.1">
+      <input type="hidden" name="_consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI'] ?? '/'); ?>">
 
       <div class="form-grid">
         <div class="field">

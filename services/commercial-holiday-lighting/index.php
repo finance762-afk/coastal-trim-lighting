@@ -16,8 +16,8 @@ $pageSvcSlug = 'commercial-holiday-lighting';
 $thisService = null;
 foreach ($services as $cfgSvc) { if ($cfgSvc['slug'] === $pageSvcSlug) { $thisService = $cfgSvc; break; } }
 
-$pageTitle       = 'Commercial Holiday Lighting San Marcos CA | Coastal Trim Lighting';
-$pageDescription = 'Commercial holiday lighting for San Marcos, CA businesses and properties, quoted per site. Send your address and approvals. Call (760) 916-3716.';
+$pageTitle       = 'Commercial Holiday Lights San Marcos | Coastal Trim Lighting';
+$pageDescription = 'Commercial holiday lighting for San Marcos, CA businesses and properties, quoted per site. Send your address and who approves it, or call (760) 916-3716.';
 $canonicalUrl    = $siteUrl . '/services/' . $pageSvcSlug . '/';
 $ogImage         = '/assets/images/og-default-v1.jpg';
 $currentPage     = 'services';

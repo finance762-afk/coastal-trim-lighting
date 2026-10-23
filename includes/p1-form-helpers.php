@@ -20,6 +20,9 @@ if (!function_exists('p1_lead_hidden_fields')) {
         $out .= '<input type="hidden" name="form_location" value="' . $h($formId) . '">' . "\n";
         $out .= '<input type="hidden" name="consent_version" value="v2.1">' . "\n";
         $out .= '<input type="hidden" name="consent_page" value="' . $h($_SERVER['REQUEST_URI'] ?? '/') . '">' . "\n";
+        // Leads endpoint reads the underscored names into consent_records (plain names ride along in the email)
+        $out .= '<input type="hidden" name="_consent_version" value="v2.1">' . "\n";
+        $out .= '<input type="hidden" name="_consent_page" value="' . $h($_SERVER['REQUEST_URI'] ?? '/') . '">' . "\n";
         foreach ($extra as $k => $v) {
             $out .= '<input type="hidden" name="' . $h($k) . '" value="' . $h($v) . '">' . "\n";
         }

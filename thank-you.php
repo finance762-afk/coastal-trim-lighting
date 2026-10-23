@@ -10,7 +10,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
  * Review request link (build-phases.md / design-system F5) uses the GBP place_id.
  * ------------------------------------------------------------------------- */
 $pageTitle       = 'Thank You | Coastal Trim Lighting | San Marcos, CA';
-$pageDescription = 'Thanks for contacting Coastal Trim Lighting in San Marcos, CA. Your lighting request is in, and the company will follow up by phone or email.';
+$pageDescription = 'Thanks for contacting Coastal Trim Lighting in San Marcos, CA. Your lighting request is in and we will follow up by phone or email. Sooner? Call (760) 916-3716.';
 $canonicalUrl    = $siteUrl . '/thank-you';
 $ogImage         = '/assets/images/og-default-v1.jpg';
 $currentPage     = 'thank-you';

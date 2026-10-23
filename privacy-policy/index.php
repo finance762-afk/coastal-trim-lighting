@@ -14,7 +14,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/legal-vars.php';
 
 $pageTitle       = 'Privacy Policy | Coastal Trim Lighting | San Marcos, CA';
-$pageDescription = 'How Coastal Trim Lighting in San Marcos, CA collects, uses and protects your information, your California privacy rights, and our text message terms.';
+$pageDescription = 'How Coastal Trim Lighting in San Marcos, CA collects, uses and protects your information, your California privacy rights and our text terms. Questions? Call us.';
 $canonicalUrl    = $siteUrl . '/privacy-policy/';
 $ogImage         = '/assets/images/og-default-v1.jpg';
 $currentPage     = 'privacy-policy';
