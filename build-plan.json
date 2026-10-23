@@ -1,0 +1,193 @@
+{
+  "seo": {
+    "serp_context": null,
+    "target_radius": 25,
+    "primary_keyword": "holiday lighting",
+    "secondary_keywords": [
+      "commercial",
+      "residential",
+      "landscape lighting",
+      "outdoor lighting",
+      "Lighting Contractor"
+    ]
+  },
+  "tier": "premium",
+  "email": "holidaylightpro760@gmail.com",
+  "pages": [],
+  "phone": "760-916-3716",
+  "assets": {
+    "logo": {
+      "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/coastal-trim-lighting/logo/1792779003250-8tk479-CTL_Logo_2.png",
+      "storage_path": "coastal-trim-lighting/logo/1792779003250-8tk479-CTL_Logo_2.png"
+    },
+    "images": [
+      {
+        "alt": "",
+        "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/coastal-trim-lighting/logo/1792779003250-8tk479-CTL_Logo_2.png",
+        "page": "any",
+        "role": null,
+        "caption": "",
+        "context": "logo",
+        "storage_path": "coastal-trim-lighting/logo/1792779003250-8tk479-CTL_Logo_2.png",
+        "quality_score": null
+      }
+    ],
+    "page_allocations": null,
+    "recommended_hero_image": {
+      "alt": "",
+      "url": "https://db.pageone.cloud/storage/v1/object/public/client-assets/coastal-trim-lighting/logo/1792779003250-8tk479-CTL_Logo_2.png",
+      "context": "logo",
+      "quality_score": null
+    }
+  },
+  "design": {
+    "fonts": {},
+    "notes": "",
+    "style": "modern",
+    "colors": {
+      "extracted_from_logo": true
+    },
+    "logo_analysis": {}
+  },
+  "domain": "coastal-trim-lighting",
+  "phases": [
+    {
+      "name": "scaffold",
+      "phase": 1,
+      "status": "pending"
+    },
+    {
+      "name": "nav_footer_head",
+      "phase": 2,
+      "status": "pending"
+    },
+    {
+      "name": "homepage",
+      "phase": 3,
+      "status": "pending"
+    },
+    {
+      "name": "inner_pages",
+      "phase": 4,
+      "status": "pending"
+    },
+    {
+      "name": "seo_aeo_deploy",
+      "phase": 5,
+      "status": "pending"
+    }
+  ],
+  "address": {
+    "zip": "92069",
+    "city": "San Marcos",
+    "state": "CA",
+    "street": "1326 Topanga Drive"
+  },
+  "content": {
+    "usps": [],
+    "years": 10,
+    "insurance": "",
+    "description": "Coastal Trim Lighting is a local business serving San Marcos, CA and the surrounding area, in business since 2016. Services include holiday lighting, commercial, residential and landscape lighting. Contact Coastal Trim Lighting at 760-916-3716 for availability and pricing.",
+    "certifications": []
+  },
+  "reviews": [],
+  "tagline": "",
+  "industry": "Lighting Contractor",
+  "services": [],
+  "owner_name": "Jacob Akbari",
+  "client_slug": "coastal-trim-lighting",
+  "form_action": "https://db.pageone.cloud/functions/v1/leads/coastal-trim-lighting",
+  "github_repo": "",
+  "web_sources": [
+    "https://share.google/iQ5NX8CzGWU1RNutA",
+    "http://coastaltrimlighting.com/"
+  ],
+  "company_name": "Coastal Trim Lighting",
+  "integrations": {
+    "geo": null,
+    "bbb_url": null,
+    "booking": {
+      "days": [],
+      "windows": [],
+      "authorized": false
+    },
+    "spanish": false,
+    "financing": null,
+    "photo_day": null,
+    "accepts_sms": false,
+    "gbp_place_id": "ChIJVZCuRDa97AIRSOe0tWvJYvM",
+    "estimate_tool": {
+      "pricing": [],
+      "authorized": false
+    },
+    "gbp_map_embed": null,
+    "directions_url": "https://www.google.com/maps/dir/?api=1&destination=place_id:ChIJVZCuRDa97AIRSOe0tWvJYvM",
+    "elfsight_embed": null,
+    "financing_note": null,
+    "scheduling_url": null,
+    "text_us_number": null,
+    "review_request_url": "https://search.google.com/local/writereview?placeid=ChIJVZCuRDa97AIRSOe0tWvJYvM",
+    "certification_links": []
+  },
+  "service_areas": [
+    "San Marcos"
+  ],
+  "address_public": true,
+  "business_hours": "",
+  "image_curation": null,
+  "research_brief": {
+    "gbp": null,
+    "brief": {
+      "faqs": [
+        {
+          "a": "Cost depends on the number of fixtures, whether new wiring is needed, and the complexity of the design. Coastal Trim Lighting provides a free on-site estimate with a written, itemized quote so you know the scope and price before any work begins.",
+          "q": "How much does lighting installation cost in San Marcos?"
+        },
+        {
+          "a": "New circuits, hardwired fixtures, and some outdoor or low-voltage work may require a permit from the City of San Marcos. Our team handles permit requirements as part of the project so you do not have to navigate the process yourself.",
+          "q": "Do I need a permit for new or outdoor lighting?"
+        },
+        {
+          "a": "Yes. LED retrofits typically use less energy, last longer, and need less maintenance than older fixtures. We can recommend options that match your existing fixtures or suggest new ones, and we will point out any current utility rebate programs that may apply.",
+          "q": "Can you convert my existing lighting to LED?"
+        },
+        {
+          "a": "Fixtures exposed to salt air and humidity need corrosion-resistant materials such as powder-coated aluminum, marine-grade finishes, and stainless steel hardware. We specify fixtures and mounting hardware based on how close the property is to the coast and how exposed it is.",
+          "q": "Will my outdoor fixtures hold up to coastal weather and salt air?"
+        },
+        {
+          "a": "Yes, we handle residential and commercial lighting projects, including retrofits, tenant improvements, and exterior lighting for businesses. Contact us to discuss your property's needs and schedule a site visit.",
+          "q": "Do you work on commercial properties as well as homes?"
+        }
+      ],
+      "about_angle": "Lead with the local team and the standard of workmanship rather than a generic company history. Explain what a client gets: a contractor who shows up on time, designs for the site, and stands behind the install. Use the name Coastal Trim as a brand story only if the owner confirms its origin. Leave bracketed placeholders for founding year, owner name, license number, and service area until the owner supplies them.",
+      "hero_headline": "Professional Lighting Installation in San Marcos, CA",
+      "differentiators": [
+        "No competitor or Google Business Profile data was provided, so every point below is a hypothesis to confirm with the owner before publishing.",
+        "Local San Marcos focus: position the business as the nearby team that knows local permitting, neighborhoods, and the North County homes and businesses it serves.",
+        "Coastal-climate expertise (verify): if the work includes coastal properties, emphasize corrosion-resistant finishes and hardware suited to salt air and humidity.",
+        "California energy-code know-how (verify): highlight Title 24 compliance and LED retrofits that reduce energy use, and point to any current utility rebate programs.",
+        "Credentials as trust signals (verify): show the CSLB license number, insurance, and any manufacturer certifications, since these are the first things homeowners and property managers check.",
+        "Full-service range (verify): residential interior and exterior, landscape and architectural lighting, and commercial retrofits, if the business offers them. A single contact for design, install, and service is a clear advantage over fragmented trades.",
+        "Free on-site estimates and clear written quotes, if offered, address the most common complaint about lighting contractors: unclear scope and pricing."
+      ],
+      "hero_subheadline": "Coastal Trim Lighting designs, installs, and upgrades indoor, outdoor, and commercial lighting for San Marcos homes and businesses. Request your free estimate today.",
+      "tone_recommendation": "Friendly-professional with an authoritative edge on technical points. Use plain, warm language for homeowners and property managers, explain lighting terms when they appear, and back claims with specifics such as licensing, code compliance, and the coastal-rated materials used. Avoid jargon-heavy copy, hype words like cheapest or best, and unverified claims about years in business or awards until the owner confirms them."
+    },
+    "competitors": [],
+    "generated_at": "2026-10-23T18:11:02.816Z",
+    "existing_site": null
+  },
+  "competitor_urls": [],
+  "phone_secondary": "",
+  "service_grouping": {
+    "cap": 16,
+    "tier": "premium",
+    "groups": [],
+    "grouped_count": 0,
+    "original_count": 0
+  },
+  "lead_notification_email": "holidaylightpro760@gmail.com",
+  "lead_notification_phone": "760-916-3716",
+  "google_business_profile_url": "https://share.google/iQ5NX8CzGWU1RNutA"
+}
