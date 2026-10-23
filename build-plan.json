@@ -41,13 +41,44 @@
     }
   },
   "design": {
-    "fonts": {},
+    "fonts": {
+      "heading": "Bricolage Grotesque",
+      "body": "DM Sans",
+      "accent": "Barlow Condensed"
+    },
     "notes": "",
     "style": "modern",
     "colors": {
-      "extracted_from_logo": true
+      "extracted_from_logo": true,
+      "primary": "#185a6c",
+      "secondary": "#23727f",
+      "accent": "#e0a42a",
+      "dark": "#0d1f26",
+      "paper": "#f6f3ec",
+      "ink": "#16242a"
     },
-    "logo_analysis": {}
+    "logo_analysis": {
+      "file": "/assets/images/logo-v1.png",
+      "source_px": "1080x1080 (trimmed 991x988)",
+      "aspect_ratio": 1.0,
+      "type": "square badge (circular emblem, script wordmark inside)",
+      "background": "transparent",
+      "cut_required": false,
+      "header_height_px": {
+        "desktop": 96,
+        "scrolled": 80,
+        "mobile": 72
+      },
+      "nav": "white glass bar, dark links (logo carries the color)",
+      "palette": [
+        "#185a6c",
+        "#3198a0",
+        "#dca429",
+        "#bf6821",
+        "#cad9c5"
+      ]
+    },
+    "archetype": "warm-human"
   },
   "domain": "coastal-trim-lighting",
   "phases": [

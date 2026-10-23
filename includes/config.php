@@ -103,21 +103,22 @@ $socialLinks = [];
 $googleAnalyticsId = 'G-XXXXXXXXXX';
 
 /* ---------------------------------------------------------------------------
- * Brand colors — build-plan design.colors carries no values yet
- *   (extracted_from_logo: true, logo_analysis: {}). These mirror the scaffold
- *   defaults in framework.css :root so config and CSS agree; Phase 2 logo
- *   analysis replaces BOTH with the real logo colors.
+ * Brand colors — Phase 2 logo analysis (CTL_Logo_2.png, 2026-10-23). Mirrors
+ *   framework.css :root. Transparent ~1:1 badge: deep coastal teal ring, aqua
+ *   script lettering, string-light amber/orange bulbs, cream "LIGHTING".
  * ------------------------------------------------------------------------- */
 $colors = [
-    'primary'   => '#1f2428',
-    'secondary' => '#5a6570',
-    'accent'    => '#c8461a',
+    'primary'   => '#185a6c',
+    'secondary' => '#23727f',
+    'accent'    => '#e0a42a',
+    'dark'      => '#0d1f26',
 ];
-$archetype = '';   // build-plan design.archetype — set in Phase 2
+$archetype = 'warm-human';   // build-plan design.archetype (Phase 2)
 
-/* Logo — build-plan assets.logo (CTL_Logo_2.png) is not on disk yet; Phase 2
- *   localizes it to /assets/images/ with a version suffix. Never hotlink the
- *   db.pageone.cloud/storage original. */
+/* Logo — localized Phase 2 (transparent PNG, no background cut needed). Versioned
+ *   files in /assets/images/: logo-v1.png/.webp (440px), logo-v1-192.png/.webp
+ *   (header/footer), favicon.svg/-32/-16, apple-touch-icon.png, og-default-v1.jpg.
+ *   Never hotlink the db.pageone.cloud/storage original (source below). */
 $logoSourceUrl = 'https://db.pageone.cloud/storage/v1/object/public/client-assets/coastal-trim-lighting/logo/1792779003250-8tk479-CTL_Logo_2.png';
 
 /* Estimate CTA label — intake does not confirm that estimates are free (the
@@ -149,7 +150,7 @@ $licenseLabel = '';
  * CSS cache-bust — SINGLE source of truth. Pages MUST NOT set their own.
  * Bump this on every framework.css change.
  * ------------------------------------------------------------------------- */
-$cssVersion = '1';
+$cssVersion = '2';
 
 /* ---------------------------------------------------------------------------
  * Forms — Page One leads endpoint (build-plan form_action, verbatim)

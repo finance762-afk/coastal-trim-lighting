@@ -96,12 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     // Close nav when clicking a link
     navLinks.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        navLinks.classList.remove('active');
-        hamburger.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
+      link.addEventListener('click', function() { setOpen(false); }); /* full close: also clears body.menu-open + aria-hidden (estimate link opens the dialog from the menu) */
     });
   }
 
@@ -179,21 +174,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  /* === Reviews carousel === */
-  // v6.2: carousels are CSS scroll-snap by default (no Swiper CDN). If a build
-  // genuinely needs Swiper features, load the CDN in that page's head and this
-  // guard will initialize it; otherwise it's a harmless no-op.
-  if (typeof Swiper !== 'undefined') {
-    var reviewsSwiper = document.querySelector('.reviews-swiper');
-    if (reviewsSwiper) {
-      new Swiper('.reviews-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 24,
-        loop: true,
-        pagination: { el: '.swiper-pagination', clickable: true },
-        breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
-      });
-    }
-  }
+  /* Reviews / galleries are CSS scroll-snap (v6.2) — no carousel library. */
 
 });

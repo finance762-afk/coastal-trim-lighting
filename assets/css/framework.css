@@ -17,11 +17,11 @@
   src: url('/assets/fonts/bricolage-grotesque.woff2') format('woff2');
 }
 @font-face {
-  font-family: 'Figtree';
+  font-family: 'DM Sans';
   font-style: normal;
-  font-weight: 400 900;
+  font-weight: 400 800;
   font-display: swap;
-  src: url('/assets/fonts/figtree.woff2') format('woff2');
+  src: url('/assets/fonts/dm-sans.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Barlow Condensed';
@@ -33,28 +33,29 @@
 
 /* === Tokens === */
 :root {
-  /* Brand — from logo analysis (build-plan design.colors) */
-  --color-primary: #1f2428;
-  --color-primary-rgb: 31, 36, 40;
-  --color-primary-dark: color-mix(in srgb, #1f2428 78%, black);
-  --color-primary-deep: color-mix(in srgb, #1f2428 62%, black);
-  --color-secondary: #5a6570;
-  --color-secondary-rgb: 90, 101, 112;
-  --color-accent: #c8461a;
-  --color-accent-rgb: 200, 70, 26;
-  --color-accent-dark: color-mix(in srgb, #c8461a 55%, black);      /* accent as TEXT on light — 55% keeps warm accents ≥4.5:1 on paper (2026-09-04) */
-  --color-accent-bright: color-mix(in srgb, #c8461a 80%, white);    /* eyebrows on dark bands */
+  /* Brand — Phase 2 logo analysis (CTL_Logo_2.png, 2026-10-23): deep coastal teal
+     badge ring, aqua script lettering, warm string-light amber. Archetype: warm-human. */
+  --color-primary: #185a6c;
+  --color-primary-rgb: 24, 90, 108;
+  --color-primary-dark: color-mix(in srgb, #185a6c 78%, black);
+  --color-primary-deep: color-mix(in srgb, #185a6c 62%, black);
+  --color-secondary: #23727f;
+  --color-secondary-rgb: 35, 114, 127;
+  --color-accent: #e0a42a;
+  --color-accent-rgb: 224, 164, 42;
+  --color-accent-dark: color-mix(in srgb, #e0a42a 55%, black);      /* accent as TEXT on light — 55% keeps warm accents ≥4.5:1 on paper (2026-09-04) */
+  --color-accent-bright: color-mix(in srgb, #e0a42a 80%, white);    /* eyebrows on dark bands */
 
   /* Ground and ink — warm, hue-biased neutrals (never pure grey) */
   --color-paper: #f6f3ec;
-  --color-paper-2: color-mix(in srgb, #f6f3ec 92%, #1f2428 8%);
+  --color-paper-2: color-mix(in srgb, #f6f3ec 92%, #185a6c 8%);
   --color-surface: #ffffff;
-  --color-ink: #1b2320;
-  --color-ink-2: color-mix(in srgb, #1b2320 82%, #f6f3ec);
-  --color-muted: color-mix(in srgb, #1b2320 72%, #f6f3ec);           /* 72% = ≥4.5:1 small text on paper (was 58%, failed WCAG AA at 3.6:1) */
-  --color-line: color-mix(in srgb, #1b2320 14%, #f6f3ec);
-  --color-dark: #14181a;
-  --color-dark-alt: color-mix(in srgb, #14181a 80%, #1f2428);
+  --color-ink: #16242a;
+  --color-ink-2: color-mix(in srgb, #16242a 82%, #f6f3ec);
+  --color-muted: color-mix(in srgb, #16242a 72%, #f6f3ec);           /* 72% = ≥4.5:1 small text on paper (was 58%, failed WCAG AA at 3.6:1) */
+  --color-line: color-mix(in srgb, #16242a 14%, #f6f3ec);
+  --color-dark: #0d1f26;                                              /* night-sky teal from the logo badge */
+  --color-dark-alt: color-mix(in srgb, #0d1f26 80%, #185a6c);
 
   /* Legacy aliases (v6 pages + prompts) */
   --color-white: #ffffff; --color-black: #111111;
@@ -68,10 +69,12 @@
   --color-card-tint-3: color-mix(in srgb, var(--color-accent) 10%, white);
   --color-card-tint-neutral: var(--color-paper-2);
   --color-neutral-warm: var(--color-paper-2);
+  /* v8 component partial aliases (estimate-tool, booking-window, zip-check, recent-work, before-after) */
+  --container-max: var(--container); --bg-alt: var(--color-paper-2); --text-light: var(--color-muted); --ba-pos: 50%;
 
   /* Type — 3-font system */
   --font-heading: "Bricolage Grotesque", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  --font-body: "Figtree", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-body: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   --font-accent: "Barlow Condensed", 'Arial Narrow', 'Roboto Condensed', sans-serif;
 
   /* Fluid scale. H1 tops out ~42px desktop; pages never raise it. */
@@ -86,7 +89,7 @@
 
   /* Layout */
   --measure: 62ch; --content-width: 62ch;
-  --nav-height: 84px; --navbar-height: 84px;
+  --nav-height: 108px; --navbar-height: 108px;
   --max-width: 1180px; --container: 1180px; --max-width-wide: 1400px; --container-wide: 1400px;
   --section-pad: clamp(3.5rem, 7vw, 6rem); --section-pad-mobile: 3rem;
   --space-1: .25rem; --space-2: .5rem; --space-3: .75rem; --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem;
@@ -133,11 +136,36 @@ img, svg, video { max-width: 100%; height: auto; display: block; }
 .on-dark .text-accent, .texture-grain .text-accent { color: var(--color-accent-bright); }
 
 /* === Layout rhythm: three container widths, alternate them === */
-.container { width: min(var(--container), 100% - 2 * clamp(1rem, 4vw, 2.5rem)); margin-inline: auto; }
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+}
 .container-wide { width: min(var(--container-wide), 100% - 2 * clamp(1rem, 3vw, 2rem)); margin-inline: auto; }
 .container-narrow { width: min(760px, 100% - 2 * clamp(1rem, 4vw, 2.5rem)); margin-inline: auto; }
-section, .section { position: relative; padding-block: var(--section-pad); overflow-x: clip; } /* x-clip (2026-09-04): hidden .reveal-left/right are translated ±24px and were widening scrollWidth on mobile */
-/* (removed 2026-09-04: `section.hero { padding: 0 }` out-specified `.hero`'s own padding and pushed every H1 under the fixed header on the first real v7 build) */
+/* Phase 2 MANDATORY base rules — prevent section collision, clipping and overflow */
+section {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(4rem, 10vh, 8rem) 0; /* MANDATORY — prevents section collision */
+}
+
+section.hero {
+  padding: 0; /* hero overrides — full bleed */
+}
+
+h1, h2, h3, h4 {
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+p {
+  overflow-wrap: anywhere;
+}
+
+.section { position: relative; padding-block: var(--section-pad); overflow-x: clip; } /* x-clip (2026-09-04): hidden .reveal-left/right are translated ±24px and were widening scrollWidth on mobile */
+/* NOTE: the mandated `section.hero { padding: 0 }` above out-specifies `.hero`'s own padding (this pushed every H1 under the fixed header on the first v7 build, 2026-09-04). The header clearance is re-asserted at equal specificity in the Hero block below ("Phase 2 hero clearance"). */
 .section--tight { padding-block: clamp(2.25rem, 4vw, 3.5rem); }
 .section--light { background: var(--color-surface); }
 .section-head, .section-header, .section-title { display: grid; gap: .6rem; max-width: 60ch; margin-bottom: clamp(1.5rem, 3vw, 2.5rem); }
@@ -314,6 +342,11 @@ body.menu-open .site-header { z-index: 960; } /* keep the bar (and the hamburger
 @media (max-width: 560px) { .hero, .hero-v7 { padding-top: calc(var(--nav-height) + 1.25rem); } .hero-actions .btn, .hero-buttons .btn { width: 100%; } }
 /* Interior + legal heroes: compact, sized to content */
 .hero--interior, .hero--legal, .hero-interior { padding: calc(var(--nav-height) + clamp(1.5rem, 4vw, 3rem)) 0 clamp(2rem, 4vw, 3rem); background: var(--color-dark); color: #fff; }
+/* Phase 2 hero clearance: `section.hero { padding: 0 }` (0,1,1) beats `.hero` (0,1,0). Re-assert the
+   fixed-header clearance at the same specificity, after it. Backgrounds stay full bleed (no inline padding). */
+section.hero, section.hero-v7 { padding: calc(var(--nav-height) + clamp(2rem, 5vw, 4rem)) 0 clamp(2.5rem, 5vw, 4rem); }
+section.hero--interior, section.hero--legal, section.hero-interior { padding: calc(var(--nav-height) + clamp(1.5rem, 4vw, 3rem)) 0 clamp(2rem, 4vw, 3rem); }
+@media (max-width: 560px) { section.hero:not(.hero--interior):not(.hero--legal):not(.hero-interior), section.hero-v7 { padding-top: calc(var(--nav-height) + 1.25rem); } }
 .hero--interior h1, .hero--legal h1 { color: #fff; }
 .hero--interior .hero-answer, .hero--interior p { color: rgba(255,255,255,.85); }
 .hero--interior .hero-form-card p, .hero--photo .hero-form-card p, .hero--type .hero-form-card p { color: var(--color-muted); }
@@ -645,3 +678,64 @@ body:has(.hero:not(.hero--interior):not(.hero-interior):not(.hero--legal)) .site
 .hero-visual .hero-form-card { position: absolute; left: -2rem; bottom: 1.5rem; width: 320px; z-index: 3; display: grid; }
 @media (max-width: 1120px) { .hero-visual .hero-form-card { left: 1rem; } }
 @media (max-width: 900px) { .hero-grid--visual { grid-template-columns: 1fr; gap: 1.5rem; } .hero-visual { min-height: 0; aspect-ratio: 16 / 10; } .hero-visual__img { right: 0; border-radius: var(--radius-lg); } .hero-visual .hero-form-card { display: none; } }
+
+/* ============================================================================
+   Phase 2 — Coastal Trim Lighting includes (header, footer, legal row, dialog).
+   Archetype: warm-human (Bricolage Grotesque + DM Sans, Barlow Condensed accent).
+   ============================================================================ */
+
+/* Header: ~1:1 badge logo — 96px desktop / 80px scrolled / 72px mobile; bar sized to hold it */
+@media (max-width: 1000px) { :root { --nav-height: 88px; --navbar-height: 88px; } }
+.site-header .navbar { height: 100%; }
+.site-logo picture, .footer-logo picture { display: block; line-height: 0; }
+.site-logo img { width: auto; aspect-ratio: 1 / 1; }
+.navbar-links > li > a svg { transition: transform var(--transition); opacity: .7; }
+.navbar-links > .has-dropdown:hover > a svg, .navbar-links > .has-dropdown:focus-within > a svg { transform: rotate(180deg); }
+.navbar-links .dropdown { top: 100%; }
+.navbar-links .dropdown a[aria-current="page"] { background: var(--color-paper-2); color: var(--color-primary); font-weight: 600; }
+.navbar-cta .navbar-phone { border-color: color-mix(in srgb, var(--color-primary) 30%, var(--color-line)); color: var(--color-primary); }
+.navbar-cta .navbar-phone:hover { border-color: var(--color-primary); background: color-mix(in srgb, var(--color-primary) 6%, transparent); }
+.mobile-menu-links > li { border-bottom: 0; }
+.mobile-menu .mobile-submenu { margin: 0 0 .4rem; }
+.mobile-menu-links a[aria-current="page"] { color: var(--color-accent-bright) !important; }
+.mobile-menu-cta .btn svg { color: currentColor; }
+
+/* Footer layout */
+.site-footer .footer-top { position: relative; z-index: 1; }
+.site-footer .grain-layer { opacity: .35; }
+.site-footer::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: linear-gradient(90deg, var(--color-primary), var(--color-accent), var(--color-secondary)); }
+.footer-logo { display: inline-block; margin-bottom: 1rem; }
+.footer-logo img { width: 132px; height: auto; margin: 0; }
+.site-footer .footer-subhead { margin-top: 1.6rem; }
+.footer-cta { margin-top: 1.25rem; }
+.footer-entity a { color: rgba(255,255,255,.9); }
+.footer-entity a:hover { color: #fff; }
+.footer-bottom { margin-top: 2.5rem; border-top: 1px solid rgba(255,255,255,.12); padding: 1.25rem 0 .75rem; position: relative; z-index: 1; }
+.footer-bottom-bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .4rem 1.5rem; font-size: .82rem; color: rgba(255,255,255,.62); padding-top: .75rem; }
+.footer-bottom-bar p { margin: 0; }
+.footer-credit a { color: rgba(255,255,255,.72); }
+
+/* Footer legal row (legal-compliance.md — footer legal utility row) */
+.footer-legal-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: var(--space-xs) var(--space-sm); font-size: .85rem; padding: 0 0 var(--space-sm); margin: 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+.footer-legal-row a { color: rgba(255,255,255,.72); text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; transition: color var(--transition); }
+.footer-legal-row a:hover, .footer-legal-row a:focus-visible { color: #fff; text-decoration: underline; }
+.footer-legal-row .divider { color: rgba(255,255,255,.3); font-size: .75rem; }
+@media (max-width: 767px) {
+  .footer-legal-row { gap: 0 var(--space-md); justify-content: flex-start; }
+  .footer-legal-row .divider { display: none; }
+  .footer-bottom-bar { flex-direction: column; align-items: flex-start; }
+}
+
+/* Back to top */
+.icon-flip { transform: rotate(180deg); }
+.back-to-top:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+/* Estimate dialog form */
+dialog.estimate-dialog h2 { font-size: 1.3rem; }
+.estimate-form { display: grid; gap: .8rem; }
+.estimate-form .form-consent-fieldset { display: grid; gap: .1rem; }
+.estimate-form .form-consent-item { margin: .25rem 0; font-size: .78rem; }
+.estimate-form input[type="checkbox"] { width: 20px; height: 20px; min-height: 0; padding: 0; margin: 2px 0 0; flex: 0 0 auto; accent-color: var(--color-primary); }
+.dialog-body .hero-form-tagline { margin-bottom: .6rem; }
+.estimate-form .form-footnote a { color: var(--color-primary); font-weight: 600; }
+
