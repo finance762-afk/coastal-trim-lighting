@@ -221,6 +221,41 @@ function generateServiceSchema(array $service): array {
     ];
 }
 
+/**
+ * One @graph for a service page: WebPage (speakable) + Service (@id #service-{slug},
+ * provider → the sitewide #organization node head.php emits) + BreadcrumbList.
+ * $description is the page-specific service description (not the config placeholder).
+ * NEVER FAQPage, NEVER aggregateRating.
+ */
+function generateServicePageGraph(array $service, string $pageName, string $description, array $crumbs): array {
+    global $siteUrl;
+    $slug = $service['slug'] ?? getServiceSlug($service['name']);
+    $url  = $siteUrl . '/services/' . $slug . '/';
+
+    $svcNode = generateServiceSchema($service);
+    unset($svcNode['@context']);
+    $svcNode['@id']         = $url . '#service-' . $slug;
+    $svcNode['description'] = $description;
+
+    $crumbNode = generateBreadcrumbSchema($crumbs);
+    unset($crumbNode['@context']);
+    $crumbNode['@id'] = $url . '#breadcrumb';
+
+    $pageNode = [
+        '@type'       => 'WebPage',
+        '@id'         => $url . '#webpage',
+        'url'         => $url,
+        'name'        => $pageName,
+        'description' => $description,
+        'isPartOf'    => ['@type' => 'WebSite', 'url' => $siteUrl . '/'],
+        'about'       => ['@id' => $svcNode['@id']],
+        'breadcrumb'  => ['@id' => $crumbNode['@id']],
+        'speakable'   => ['@type' => 'SpeakableSpecification', 'cssSelector' => ['h1', '.hero-answer', '.answer-block']],
+    ];
+
+    return ['@context' => 'https://schema.org', '@graph' => [$pageNode, $svcNode, $crumbNode]];
+}
+
 /** BreadcrumbList. $crumbs = [['name' => 'Services', 'url' => '/services/'], ...] (Home is prepended). */
 function generateBreadcrumbSchema(array $crumbs): array {
     global $siteUrl;

@@ -75,6 +75,140 @@
           "where": "homepage reviews band (hidden until the feed has reviews)"
         }
       ]
+    },
+    {
+      "path": "/services/",
+      "useful_because": "The services hub is the one page that lays all three Coastal Trim Lighting services side by side and tells a visitor which one fits: a house lit for the holidays, a business or commercial property lit for the holidays, or landscape and outdoor lighting that stays on every night. It explains that every job is priced per property and lists, per service, the details that move the price, with a link to the page that explains each in full.",
+      "needs_confirmation": [
+        {
+          "fact": "Third service: landscape lighting vs Permanent Trim Lighting",
+          "question": "Intake lists 'landscape lighting', but your current site markets 'Permanent Trim Lighting' (app-controlled LED in an aluminum track along the roofline) and does not mention landscape lighting. Which do you actually sell: landscape lighting (paths, trees, yard), permanent trim lighting, or both? We will rename or add the service page to match.",
+          "where": "third service card, chooser row, pricing column; /services/landscape-lighting/ as a whole"
+        },
+        {
+          "fact": "Towns served",
+          "question": "your current site (coastaltrimlighting.com) says you serve Carlsbad, Encinitas, San Marcos, Oceanside, Rancho Santa Fe, Del Mar, Solana Beach and Vista. Is that list current? Intake only lists San Marcos, so the site currently says 'San Marcos and nearby towns within about 25 miles'.",
+          "where": "hub intro and closing CTA, every service page, future service-area pages"
+        }
+      ]
+    },
+    {
+      "path": "/services/residential-holiday-lighting/",
+      "useful_because": "A San Marcos homeowner gets the specific things that decide a holiday lighting price on a house (roofline length and height, tile vs shingle, trees and palms, outlet locations, HOA rules in neighborhoods like San Elijo Hills) in one table, a four-step path from request to install day, an honest DIY-vs-hire comparison, and answers on price and booking timing. None of that is on the homepage, which only summarises the service in a card.",
+      "needs_confirmation": [
+        {
+          "fact": "What the holiday service includes (lights, timers, takedown, storage)",
+          "question": "your current site (coastaltrimlighting.com) says the holiday service includes commercial-grade lights and timers, professional installation, removal in January, and storage for next season. Is that still exactly what's included in the price? If yes we will add a 'What's included' list and a takedown/storage row to the comparison table.",
+          "where": "service breakdown, DIY-vs-hire table (no takedown/storage row yet), final CTA"
+        },
+        {
+          "fact": "Installing the customer's own lights",
+          "question": "your current site (coastaltrimlighting.com) says you can install a customer's own lights if they are untangled and working, though you recommend your commercial-grade lights. Still true?",
+          "where": "FAQ (question left out until confirmed)"
+        },
+        {
+          "fact": "Design mockup before booking",
+          "question": "your current site (coastaltrimlighting.com) says you can prepare a mockup from property photos and satellite views, then confirm measurements at an on-site assessment. Is that still part of the process, and is the on-site assessment free?",
+          "where": "process timeline (steps currently: send address → list → dates and price → install)"
+        },
+        {
+          "fact": "Typical price range or minimum for a house",
+          "question": "Is there a typical price range or a minimum charge for a house you're comfortable publishing (for example per foot of roofline)?",
+          "where": "FAQ 'How much does it cost…' and the pricing answer block (no figures yet)"
+        },
+        {
+          "fact": "Install season and booking cutoff",
+          "question": "When do holiday installs start each year, and is there a date after which you can't take new houses? Your site says '2026 holiday bookings now open'.",
+          "where": "FAQ 'When should I get my house on the schedule?', final CTA"
+        },
+        {
+          "fact": "Roof types and heights handled",
+          "question": "Do you install on two-story homes and on tile roofs (concrete and clay)? Any roofs or heights you won't do?",
+          "where": "telltale-signs tiles and the price table (written as things to tell you, not as a promise)"
+        },
+        {
+          "fact": "Family-owned / warranty claims",
+          "question": "Your current site calls Coastal Trim Lighting 'local, family-owned' and mentions 'full-season warranties'. Can we say both? What does the warranty cover (e.g. bulb replacement during the season)?",
+          "where": "expert positioning section"
+        }
+      ]
+    },
+    {
+      "path": "/services/commercial-holiday-lighting/",
+      "useful_because": "A business owner or property manager gets what a house page cannot give them: the four things to settle before install (who approves, where the power is, safe work windows, vendor paperwork), a table showing how a commercial job differs from a residential one, a staff-vs-hire comparison, and a four-step stepper from site details to install. It is written for the person who has to get sign-off, not for a homeowner.",
+      "needs_confirmation": [
+        {
+          "fact": "Types of commercial properties served",
+          "question": "your current site (coastaltrimlighting.com) says you light shopping centers, restaurants, hotels and community entrances. Can we list those property types on the page?",
+          "where": "hero answer and expert section (currently 'businesses and commercial properties' only)"
+        },
+        {
+          "fact": "Lights supplied, January removal and storage for commercial jobs",
+          "question": "your current site (coastaltrimlighting.com) says for commercial jobs you provide the lights and handle installation, January removal and storage. Still accurate?",
+          "where": "service breakdown and staff-vs-hire table"
+        },
+        {
+          "fact": "Certificate of insurance for property managers",
+          "question": "Property managers often ask vendors for a certificate of insurance (COI) and a W-9. Can you provide these? Are you insured (general liability, workers' comp)?",
+          "where": "'What paperwork is needed' card (currently asks the customer to tell you what they need)"
+        },
+        {
+          "fact": "After-hours or off-peak installs",
+          "question": "Can you install before opening, after closing or on weekends for businesses that can't have ladders up during trading hours?",
+          "where": "'When work can happen' card and process step 4"
+        },
+        {
+          "fact": "Commercial pricing approach",
+          "question": "How do you price commercial jobs (site visit and written quote, per-foot rate, minimum)? Any typical range we can publish?",
+          "where": "FAQ 'How is holiday lighting priced for a commercial property…'"
+        },
+        {
+          "fact": "Commercial design / custom displays",
+          "question": "Your current site has a 'Commercial Design' page. Do you design custom displays (e.g. trees, wreaths, entrance features) beyond roofline and tree lighting?",
+          "where": "service breakdown"
+        }
+      ]
+    },
+    {
+      "path": "/services/landscape-lighting/",
+      "useful_because": "A homeowner or property manager planning year-round outdoor lighting gets a starting plan (paths, feature trees, entry, patio), the six details that shape a landscape lighting quote including power, controls and distance to the coast, an honest solar-vs-wired comparison, and answers on San Marcos permits and salt air. The homepage only names the service; this page explains how to scope it.",
+      "needs_confirmation": [
+        {
+          "fact": "Whether this service is landscape lighting or Permanent Trim Lighting",
+          "question": "Intake says 'landscape lighting', but your current site sells 'Permanent Trim Lighting' (roofline LED track, app-controlled, millions of colors). Should this page be about landscape lighting, permanent trim lighting, or both? If permanent trim is your main year-round product, we will rebuild this page around it.",
+          "where": "entire page"
+        },
+        {
+          "fact": "Fixture types and system (low-voltage, brands)",
+          "question": "What do you install for landscape lighting: low-voltage path lights, tree uplights, well lights, patio string lights? Any brands or finishes (brass, powder-coated aluminum) you use?",
+          "where": "yard-zone cards, quote table, solar-vs-wired comparison"
+        },
+        {
+          "fact": "Permits handled",
+          "question": "Do you pull permits when a landscape lighting job needs one (for example a new outdoor circuit), or does the homeowner? Do you hold a California contractor (CSLB/C-10) license?",
+          "where": "FAQ 'Do I need a permit…' (currently tells people to check with the City of San Marcos Building Division)"
+        },
+        {
+          "fact": "Coastal-rated fixtures",
+          "question": "Do you choose different fixtures or hardware for properties near the beach (marine-grade finish, stainless hardware)? Your current site says your systems are 'engineered to perform in coastal climates'.",
+          "where": "FAQ on salt air"
+        },
+        {
+          "fact": "Controls (timer, photocell, app)",
+          "question": "Do your outdoor lighting installs come with a timer, dusk-to-dawn sensor or app control?",
+          "where": "quote table 'On and off' row and comparison 'Control' row"
+        },
+        {
+          "fact": "LED retrofits of existing outdoor lighting",
+          "question": "Do you convert or replace existing outdoor fixtures with LED? (Research-brief question; left off the page until confirmed.)",
+          "where": "FAQ"
+        },
+        {
+          "fact": "Warranty on permanent/landscape installs",
+          "question": "Is there a warranty on landscape or permanent lighting installs? How long, and what does it cover?",
+          "where": "expert section / FAQ"
+        }
+      ]
     }
   ]
 }
