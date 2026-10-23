@@ -85,10 +85,12 @@ $services = [
 
 /* ---------------------------------------------------------------------------
  * Service areas — build-plan service_areas holds San Marcos only. Add a town
- *   here only after the client confirms it. Area pages live at /areas/<slug>/.
+ *   here only after the client confirms it. Area pages live at /service-areas/<slug>/.
  * ------------------------------------------------------------------------- */
 $serviceAreas = [
-    ['name' => 'San Marcos', 'slug' => 'san-marcos', 'zip' => '92069', 'county' => 'San Diego', 'primary' => true],
+    ['name' => 'San Marcos', 'slug' => 'san-marcos', 'zip' => '92069', 'county' => 'San Diego', 'primary' => true,
+     'sameAs' => 'https://en.wikipedia.org/wiki/San_Marcos,_California',
+     'blurb' => 'Home base on Topanga Drive. San Elijo Hills, Lake San Marcos, Twin Oaks Valley, Discovery Hills and the University District around Cal State San Marcos.'],
 ];
 $targetRadiusMiles = 25;   // build-plan seo.target_radius
 

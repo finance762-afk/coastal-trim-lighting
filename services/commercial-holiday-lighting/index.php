@@ -514,6 +514,7 @@ section.chl-hero { padding-bottom: calc(var(--space-16) + var(--space-6)); }
         <div class="actions">
           <button type="button" class="btn btn-accent btn-lg" data-open-estimate><?php echo e($estimateCtaLabel); ?></button>
         </div>
+        <p><a class="chl-hub-link" href="<?php echo e(areaUrl($serviceAreas[0])); ?>">San Marcos neighborhoods and local conditions</a></p>
       </div>
       <div class="chl-cta-card reveal-right">
         <span>Prefer to talk it through?</span>

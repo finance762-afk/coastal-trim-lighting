@@ -232,6 +232,7 @@ section.lsl-hero { padding-bottom: calc(var(--space-16) + var(--space-4)); }
 .lsl-cta .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-md); }
 .lsl-cta .link-call { color: var(--color-white); }
 .lsl-cta .link-call svg { color: var(--color-accent-bright); }
+.lsl-cta .lsl-hub-link { color: var(--color-accent-bright); }
 .lsl-pathlights { display: flex; gap: var(--space-xl); justify-content: center; margin-bottom: var(--space-sm); }
 .lsl-pathlights i { width: 10px; height: 26px; border-radius: var(--radius-sm) var(--radius-sm) 0 0; background: linear-gradient(0deg, var(--color-ink-2), var(--color-muted)); position: relative; }
 .lsl-pathlights i::before { content: ""; position: absolute; left: 50%; top: -6px; width: 22px; height: 8px; transform: translateX(-50%); border-radius: var(--radius-sm); background: var(--color-accent-bright); box-shadow: 0 6px 18px 4px color-mix(in srgb, var(--color-accent) 55%, transparent); }
@@ -496,6 +497,7 @@ section.lsl-hero { padding-bottom: calc(var(--space-16) + var(--space-4)); }
         <button type="button" class="btn btn-accent btn-lg" data-open-estimate><?php echo e($estimateCtaLabel); ?></button>
         <a class="link-call" href="tel:<?php echo e($phoneRaw); ?>"><?php echo icon('phone', 18); ?> Call <?php echo e($phone); ?></a>
       </div>
+      <p><a class="lsl-hub-link" href="<?php echo e(areaUrl($serviceAreas[0])); ?>">How San Marcos hillside lots and mild winters shape landscape lighting</a></p>
     </div>
   </section>
 </div>

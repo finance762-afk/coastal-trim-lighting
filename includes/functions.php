@@ -46,7 +46,7 @@ function serviceUrl(array $service): string {
 /** Area page URL, or the service-areas hub anchor until the page is built. */
 function areaUrl(array $area): string {
     $slug = $area['slug'] ?? getAreaSlug($area['name'] ?? '');
-    if (pageExists('/areas/' . $slug)) return '/areas/' . $slug . '/';
+    if (pageExists('/service-areas/' . $slug)) return '/service-areas/' . $slug . '/';
     return '/service-areas/#' . $slug;
 }
 
@@ -256,7 +256,54 @@ function generateServicePageGraph(array $service, string $pageName, string $desc
     return ['@context' => 'https://schema.org', '@graph' => [$pageNode, $svcNode, $crumbNode]];
 }
 
-/** BreadcrumbList. $crumbs = [['name' => 'Services', 'url' => '/services/'], ...] (Home is prepended). */
+/**
+ * One @graph for an area page: WebPage (speakable) + a LocalBusiness reference
+ * to the sitewide #organization node carrying areaServed for THIS area only
+ * (same @id, so parsers merge it — never a second business) + BreadcrumbList.
+ * $area = one entry from config.php $serviceAreas (+ optional 'sameAs' URL).
+ * NEVER FAQPage, NEVER aggregateRating.
+ */
+function generateAreaPageGraph(array $area, string $pageName, string $description, array $crumbs): array {
+    global $siteUrl, $siteName, $phone, $address;
+    $slug = $area['slug'] ?? getAreaSlug($area['name']);
+    $url  = $siteUrl . '/service-areas/' . $slug . '/';
+
+    $place = ['@type' => 'City', 'name' => $area['name'] . ', ' . $address['state']];
+    if (!empty($area['county'])) {
+        $place['containedInPlace'] = ['@type' => 'AdministrativeArea', 'name' => $area['county'] . ' County, ' . $address['state']];
+    }
+    if (!empty($area['sameAs'])) $place['sameAs'] = $area['sameAs'];
+
+    $bizNode = [
+        '@type'      => 'LocalBusiness',
+        '@id'        => $siteUrl . '/#organization',
+        'name'       => $siteName,
+        'url'        => $siteUrl . '/',
+        'telephone'  => phoneE164($phone),
+        'address'    => schemaPostalAddress(),
+        'areaServed' => $place,
+    ];
+
+    $crumbNode = generateBreadcrumbSchema($crumbs);
+    unset($crumbNode['@context']);
+    $crumbNode['@id'] = $url . '#breadcrumb';
+
+    $pageNode = [
+        '@type'       => 'WebPage',
+        '@id'         => $url . '#webpage',
+        'url'         => $url,
+        'name'        => $pageName,
+        'description' => $description,
+        'isPartOf'    => ['@type' => 'WebSite', 'url' => $siteUrl . '/'],
+        'about'       => ['@id' => $bizNode['@id']],
+        'breadcrumb'  => ['@id' => $crumbNode['@id']],
+        'speakable'   => ['@type' => 'SpeakableSpecification', 'cssSelector' => ['h1', '.hero-answer', '.answer-block']],
+    ];
+
+    return ['@context' => 'https://schema.org', '@graph' => [$pageNode, $bizNode, $crumbNode]];
+}
+
+/** BreadcrumbList. $crumbs =[['name' => 'Services', 'url' => '/services/'], ...] (Home is prepended). */
 function generateBreadcrumbSchema(array $crumbs): array {
     global $siteUrl;
     $items = [['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => $siteUrl . '/']];

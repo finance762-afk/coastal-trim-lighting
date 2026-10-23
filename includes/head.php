@@ -4,7 +4,7 @@
  * Pages set, BEFORE including this file (all optional, sensible fallbacks below):
  *   $pageTitle, $pageDescription, $canonicalUrl, $ogImage, $ogType, $currentPage,
  *   $pageType (home|service|city|blog|about|faq|contact|other), $serviceSlug, $citySlug,
- *   $noindex (bool), $heroPreload (['srcset' => '…-480.avif 480w, …', 'sizes' => '100vw']),
+ *   $noindex (bool), $robotsContent (overrides $noindex, e.g. 'noindex, follow'), $heroPreload (['srcset' => '…-480.avif 480w, …', 'sizes' => '100vw']),
  *   $schemaMarkup (array | array of arrays | pre-rendered <script> string), $bodyClass.
  * The LocalBusiness node (@id #organization) is emitted here on every page; pages
  * reference it via provider/@id and never duplicate it.
@@ -41,7 +41,9 @@ if (empty($heroPreload) && !empty($heroPreloadImage)) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php echo generateMetaTags($pageTitle, $pageDescription, $canonicalUrl, $ogImage, $ogType); ?>
-<?php if ($noindex): ?>
+<?php if (!empty($robotsContent)): ?>
+  <meta name="robots" content="<?php echo e($robotsContent); ?>">
+<?php elseif ($noindex): ?>
   <meta name="robots" content="noindex, nofollow">
 <?php endif; ?>
   <meta name="theme-color" content="#185a6c">

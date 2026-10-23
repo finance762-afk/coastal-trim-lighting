@@ -518,6 +518,7 @@ section.rhl-hero { padding-bottom: calc(var(--space-16) + var(--space-10)); }
         <button type="button" class="btn btn-accent btn-lg" data-open-estimate><?php echo e($estimateCtaLabel); ?></button>
         <a class="link-call" href="tel:<?php echo e($phoneRaw); ?>"><?php echo icon('phone', 18); ?> Call <?php echo e($phone); ?></a>
       </div>
+      <p><a class="rhl-hub-link" href="<?php echo e(areaUrl($serviceAreas[0])); ?>">What San Marcos hills, wind and HOA rules mean for your house</a></p>
     </div>
   </section>
 </div>

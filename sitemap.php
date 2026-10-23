@@ -21,7 +21,7 @@ foreach ($services as $smSvc) {
 }
 $smPages[] = ['path' => '/service-areas/', 'changefreq' => 'monthly', 'priority' => '0.8'];
 foreach ($serviceAreas as $smArea) {
-    $smPages[] = ['path' => '/areas/' . $smArea['slug'] . '/', 'changefreq' => 'monthly', 'priority' => '0.8'];
+    $smPages[] = ['path' => '/service-areas/' . $smArea['slug'] . '/', 'changefreq' => 'monthly', 'priority' => '0.8'];
 }
 $smPages = array_merge($smPages, [
     ['path' => '/about/',          'changefreq' => 'monthly', 'priority' => '0.7', 'images' => [$smLogo]],
