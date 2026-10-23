@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://coastal-trim-lighting.pageone.cloud/sitemap.xml

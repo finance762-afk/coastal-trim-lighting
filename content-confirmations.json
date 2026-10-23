@@ -209,6 +209,105 @@
           "where": "expert section / FAQ"
         }
       ]
+    },
+    {
+      "path": "/about/",
+      "useful_because": "The About page tells a San Marcos homeowner or property manager who runs Coastal Trim Lighting (owner Jacob Akbari), how long it has operated (since 2016), where it is based (1326 Topanga Drive) and how far it travels (about 25 miles), what its two kinds of work are (seasonal holiday lighting and permanent landscape lighting), and which facts can be checked before hiring (Google Business Profile, address, years in business, named owner).",
+      "needs_confirmation": [
+        {
+          "fact": "Photo of the owner or a lit job for the story section",
+          "question": "Can you send a photo of Jacob (or the team) and 2-3 photos of lit jobs? The About page currently shows the logo badge where a real photo should go.",
+          "where": "About story split (logo badge placeholder), hero"
+        },
+        {
+          "fact": "Company history milestones",
+          "question": "Did the business start with holiday lighting and add commercial and landscape work later? If so, roughly which years? We only show 2016 as a dated milestone right now.",
+          "where": "About milestones timeline (only the founding year is dated)"
+        },
+        {
+          "fact": "Team size and roles",
+          "question": "Besides Jacob, are there crew members or partners we can name on the About page?",
+          "where": "About values/owner section (owner card only)"
+        },
+        {
+          "fact": "Whether Jacob founded the company",
+          "question": "Did Jacob Akbari found Coastal Trim Lighting in 2016, or take it over later? The site's schema lists him as founder.",
+          "where": "About copy (says 'owned by'), LocalBusiness schema founder"
+        },
+        {
+          "fact": "Origin of the name 'Coastal Trim'",
+          "question": "Is there a story behind the name Coastal Trim Lighting you'd like on the About page?",
+          "where": "About story (not used until confirmed)"
+        },
+        {
+          "fact": "Licence / certifications",
+          "question": "Any CSLB license number, manufacturer certifications or association memberships? A credentials card appears automatically once one is added.",
+          "where": "About 'Check us out' section ($licenseLabel in config.php)"
+        }
+      ]
+    },
+    {
+      "path": "/contact/",
+      "useful_because": "The Contact page gives every way to reach Coastal Trim Lighting (phone, email, mailing address, click-to-load map and directions) and the full request form with service choice, a message field and three separate consent checkboxes, so a lead arrives with what is needed to price the job.",
+      "needs_confirmation": [
+        {
+          "fact": "Business hours",
+          "question": "What are your business hours (and do they change in the holiday season)? The Contact page currently says 'Call to check availability'.",
+          "where": "Contact page Hours row, footer, LocalBusiness openingHours"
+        },
+        {
+          "fact": "Google Business Profile map embed",
+          "question": "Can we get the 'Embed a map' iframe from your Google Business Profile? Right now the map is a click-to-load map of the street address.",
+          "where": "Contact map ($gbpMapEmbed in config.php)"
+        },
+        {
+          "fact": "Whether the address is a visitable office",
+          "question": "Is 1326 Topanga Drive somewhere customers can visit, or should the site show San Marcos only and hide the street address?",
+          "where": "Contact page, footer, schema (address_public = true)"
+        }
+      ]
+    },
+    {
+      "path": "/faq/",
+      "useful_because": "The FAQ page answers 18 questions in four groups (General, Services, Pricing, Process) using only confirmed facts: what the company installs, its base and 25-mile range, ownership and years in business, what drives the price of each service, permits and salt air, and how booking works.",
+      "needs_confirmation": [
+        {
+          "fact": "Questions left out until confirmed",
+          "question": "We left out FAQs on free estimates, licensing/insurance, takedown and storage, booking cutoff dates, typical price ranges and reply time. Can you answer those so we can add them?",
+          "where": "FAQ page"
+        }
+      ]
+    },
+    {
+      "path": "/privacy-policy/ /terms/ /cookie-policy/ /accessibility/",
+      "useful_because": "The four legal pages cover California (CCPA/CPRA) and other state privacy rights, the Do Not Sell or Share link target, SMS/TCPA terms that match the three consent checkboxes, the cookies this site actually sets (p1_ft attribution cookie, cookie-notice flag, GA4 once enabled, Google Maps on click), the terms for estimates and jobs, and the WCAG 2.1 AA accessibility statement.",
+      "needs_confirmation": [
+        {
+          "fact": "Business entity type",
+          "question": "Is Coastal Trim Lighting an LLC, corporation, sole proprietorship or partnership? The legal pages print the name without a suffix until we know.",
+          "where": "All legal pages ($companyEntityType in includes/legal-vars.php)"
+        },
+        {
+          "fact": "State of formation",
+          "question": "Which state was the business formed in? Terms use California law and San Diego County courts by default.",
+          "where": "Terms governing law ($companyState in includes/legal-vars.php)"
+        },
+        {
+          "fact": "Paid advertising",
+          "question": "Do you run Google Ads or Meta ads? If so, the cookie and privacy pages need the ad platforms added.",
+          "where": "Cookie Policy, Privacy Policy"
+        },
+        {
+          "fact": "States where the business operates",
+          "question": "Do you work only in California?",
+          "where": "Privacy Policy state-rights section"
+        },
+        {
+          "fact": "Record retention and accessibility response time",
+          "question": "Are you OK with the template defaults: keeping business records 5-7 years, and replying to accessibility feedback within 5 business days?",
+          "where": "Privacy Policy section 7, Accessibility Statement section 5"
+        }
+      ]
     }
   ]
 }
