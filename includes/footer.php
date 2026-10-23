@@ -136,6 +136,7 @@ $footAddressLine = (!empty($addressPublic) && !empty($address['street']) ? $addr
     <form id="dialog-form" class="estimate-form" action="<?php echo e($formAction); ?>" method="POST">
       <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="_next" value="<?php echo e($siteUrl); ?>/thank-you">
+      <input type="hidden" name="form_location" value="dialog">
       <?php echo p1_attribution_fields('dialog'); ?>
       <input type="hidden" name="consent_version" value="v2.1">
       <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI'] ?? '/'); ?>">

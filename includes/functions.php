@@ -268,3 +268,43 @@ function generateMetaTags(string $title, string $description, string $canonical,
     $out .= '  <meta property="og:locale" content="en_US">' . "\n";
     return $out;
 }
+
+/* ---------------------------------------------------------------------------
+ * Full lead form — contact-form-standard.md markup (name/phone/email required,
+ * service + message, three unbundled consent checkboxes). Hidden fields come from
+ * p1_lead_hidden_fields(). $formId is the form_location/attribution id and must be
+ * unique on the page; $prefix keeps element ids unique.
+ * ------------------------------------------------------------------------- */
+function p1_full_lead_form(string $formId, string $prefix, string $submitLabel = 'Send my request', string $messagePlaceholder = ''): string {
+    global $formAction, $siteName, $email;
+    $p = e($prefix);
+    ob_start(); ?>
+<form action="<?php echo e($formAction); ?>" method="POST" class="estimate-form" id="<?php echo $p; ?>-form">
+<?php echo p1_lead_hidden_fields($formId); ?>
+  <div class="form-grid">
+    <div class="field"><label for="<?php echo $p; ?>-name">Your name *</label><input id="<?php echo $p; ?>-name" type="text" name="name" autocomplete="name" required></div>
+    <div class="field"><label for="<?php echo $p; ?>-phone">Phone *</label><input id="<?php echo $p; ?>-phone" type="tel" name="phone" autocomplete="tel" required></div>
+    <div class="field full"><label for="<?php echo $p; ?>-email">Email *</label><input id="<?php echo $p; ?>-email" type="email" name="email" autocomplete="email" required></div>
+    <div class="field full"><label for="<?php echo $p; ?>-service">Service needed</label><select id="<?php echo $p; ?>-service" name="service"><?php echo p1_service_options(); ?></select></div>
+    <div class="field full"><label for="<?php echo $p; ?>-message">Tell us about the property</label><textarea id="<?php echo $p; ?>-message" name="message" rows="3"<?php echo $messagePlaceholder !== '' ? ' placeholder="' . e($messagePlaceholder) . '"' : ''; ?>></textarea></div>
+  </div>
+  <fieldset class="form-consent-fieldset">
+    <legend class="form-consent-legend">Communication consent</legend>
+    <label class="form-consent-item" for="<?php echo $p; ?>-email-opt">
+      <input id="<?php echo $p; ?>-email-opt" type="checkbox" name="email_opt_in" value="yes" class="consent-checkbox">
+      <span class="consent-label"><strong>Email updates (optional):</strong> I agree to receive emails from <?php echo e($siteName); ?> about my inquiry, services, promotions and news. I can unsubscribe anytime via the link in any email or by emailing <?php echo e($email); ?>. Message frequency varies.</span>
+    </label>
+    <label class="form-consent-item" for="<?php echo $p; ?>-sms-opt">
+      <input id="<?php echo $p; ?>-sms-opt" type="checkbox" name="sms_opt_in" value="yes" class="consent-checkbox">
+      <span class="consent-label"><strong>SMS/Text messages (optional):</strong> I agree to receive text messages from <?php echo e($siteName); ?> at the phone number I provided. Message types may include appointment reminders, service updates and promotional offers. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe, HELP for help. <strong>Consent is not a condition of purchase.</strong></span>
+    </label>
+    <label class="form-consent-item form-consent-required" for="<?php echo $p; ?>-terms">
+      <input id="<?php echo $p; ?>-terms" type="checkbox" name="terms_accepted" value="yes" class="consent-checkbox" required>
+      <span class="consent-label">I have read and agree to the <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and <a href="/terms/" target="_blank" rel="noopener">Terms of Service</a>. <span class="required-star">*</span></span>
+    </label>
+  </fieldset>
+  <button type="submit" class="btn btn-primary btn-lg btn-block"><?php echo e($submitLabel); ?></button>
+</form>
+<?php
+    return (string) ob_get_clean();
+}

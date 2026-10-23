@@ -1,0 +1,80 @@
+{
+  "pages": [
+    {
+      "path": "/",
+      "useful_because": "The homepage tells a San Marcos homeowner or business owner exactly what Coastal Trim Lighting does and how to get it booked: the three services it offers (holiday lighting for homes, holiday lighting for businesses and commercial properties, and permanent landscape and outdoor lighting), who owns it (Jacob Akbari), where it is based (1326 Topanga Drive, San Marcos, CA 92069), how long it has operated (since 2016) and roughly how far it travels (about 25 miles). Its comparison table separates the seasonal holiday services from the year-round landscape install and lists what to have ready for each, so the first call can be priced, and the FAQ answers price, property type, off-season work, service area and scheduling from intake facts only.",
+      "needs_confirmation": [
+        {
+          "fact": "Client job photos (hero, service cards, about section, recent-work gallery)",
+          "question": "Can you send 8-12 original photos of your own lighting jobs (homes, businesses and landscape lighting, ideally at night with the lights on)? The homepage is built without photos right now and will look much stronger with your work on it.",
+          "where": "hero (currently copy + form only), service cards (icon-only), about frame (logo badge), recent-work gallery (not built — needs 8+ photos)"
+        },
+        {
+          "fact": "Whether estimates are free",
+          "question": "Are your estimates free? If yes, every button can say \"Free Estimate\" instead of \"Request an Estimate\".",
+          "where": "hero form, estimate dialog, all estimate buttons"
+        },
+        {
+          "fact": "California contractor license (CSLB) number, if any",
+          "question": "Do you hold a California contractor license (CSLB)? If so, what is the number? We'd like to show it on the site.",
+          "where": "hero chips / ticker (left out until confirmed)"
+        },
+        {
+          "fact": "Liability insurance",
+          "question": "Are you insured (general liability, workers' comp)? Can we say \"insured\" on the site?",
+          "where": "hero chips / FAQ (left out until confirmed)"
+        },
+        {
+          "fact": "Takedown and storage of holiday lights",
+          "question": "Do you take the holiday lights down after the season, and do you store them for the customer until next year? Is that included in the price?",
+          "where": "service cards, comparison table, FAQ (no takedown or storage claim made)"
+        },
+        {
+          "fact": "Whether lights are owned or leased, and whether you use the customer's own lights",
+          "question": "Do customers buy the lights, rent/lease them from you each season, or can you hang lights they already own?",
+          "where": "residential and commercial holiday lighting cards, FAQ"
+        },
+        {
+          "fact": "Installation season and booking window",
+          "question": "When do you start installing holiday lights each year, and when should people book to get a good date? Do you fill up?",
+          "where": "mid-page CTA band and FAQ \"How do I get my holiday lights on the schedule?\" (no dates or 'book early' claim made)"
+        },
+        {
+          "fact": "Pricing approach and any typical ranges",
+          "question": "How do you price holiday lighting (per foot of roofline, per project, minimum charge)? Any typical ranges you're comfortable publishing?",
+          "where": "FAQ \"How much does holiday lighting cost in San Marcos?\" (currently says each job is priced for the property)"
+        },
+        {
+          "fact": "Estimate process (site visit, photos, written quote)",
+          "question": "What happens after someone contacts you: do you visit the property, quote from photos, or quote over the phone? Do they get a written quote?",
+          "where": "about section process steps and 'What happens next' (currently describes only contact → follow-up → dates and price)"
+        },
+        {
+          "fact": "How quickly you reply to web requests",
+          "question": "How fast do you usually reply to a website request (same day, next business day)?",
+          "where": "hero form tagline and estimate dialog (no reply-time claim made)"
+        },
+        {
+          "fact": "Landscape and outdoor lighting scope",
+          "question": "For landscape and outdoor lighting, what do you install (low-voltage path lights, uplights on trees, patio/string lights, permanent roofline LED systems)? Do you also do permanent programmable holiday lighting?",
+          "where": "landscape service card, comparison table, FAQ \"Do you install lighting outside the holiday season?\""
+        },
+        {
+          "fact": "Service area towns",
+          "question": "Besides San Marcos, which towns do you regularly work in (for example Escondido, Vista, Carlsbad, Oceanside, Encinitas)? We only list towns you confirm.",
+          "where": "FAQ service-area answer, estimate section, future service-area pages"
+        },
+        {
+          "fact": "Business hours",
+          "question": "What are your regular business hours (and do they change during the holiday season)?",
+          "where": "footer contact block and LocalBusiness schema (left out until confirmed)"
+        },
+        {
+          "fact": "Google Business Profile connection for the reviews feed",
+          "question": "Internal: the Page One reviews feed returns place_id null and 0 reviews for this slug. Connect the GBP (place_id ChIJVZCuRDa97AIRSOe0tWvJYvM) so the homepage reviews band can render.",
+          "where": "homepage reviews band (hidden until the feed has reviews)"
+        }
+      ]
+    }
+  ]
+}
